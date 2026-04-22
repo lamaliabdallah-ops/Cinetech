@@ -1,6 +1,6 @@
-    document.getElementById('toggleTheme').addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
+    // document.getElementById('toggleTheme').addEventListener('click', () => {
+    //     document.body.classList.toggle('dark-mode');
+    // });
 
 
 
