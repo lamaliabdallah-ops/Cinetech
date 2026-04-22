@@ -361,3 +361,87 @@
             text-align: center;
         }
     }
+
+.connexion-wrapper {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.connexion-box {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.connexion-box h1 {
+    color: #e50914;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+}
+
+.connexion-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.connexion-box label {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.connexion-box input[type="email"],
+.connexion-box input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #111;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.connexion-box input[type="email"]:focus,
+.connexion-box input[type="password"]:focus {
+    border-color: #e50914;
+}
+
+.connexion-box input[type="submit"] {
+    padding: 12px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 8px;
+}
+
+.connexion-box input[type="submit"]:hover {
+    background-color: #b20710;
+}
+
+.connexion-box .account {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.connexion-box .account a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+.connexion-box .account a:hover {
+    text-decoration: underline;
+}
