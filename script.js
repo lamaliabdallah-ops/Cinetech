@@ -121,8 +121,6 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
                 }
               
 
-
-                
                 newImg.className = "w-full h-80 object-cover rounded-lg";
                 newTitle.className = "text-2xl font-bold mt-3";
                 newDescription.className = "text-sm text-gray-600 mt-2";
@@ -154,10 +152,47 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
     if (btn_next) btn_next.addEventListener('click', nextPage);
 
     getData();
-// })
+
 
 async function getMovieDetail() {
+    //  Récupérer l'ID depuis l'URL
+    const params = new URLSearchParams(window.location.search);
+    const movieId = params.get('movieId');
     
+    const url = `https://api.themoviedb.org/3/movie/${movieId}`;
+
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${apiKey}`
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) throw new Error(`Erreur: ${response.status}`);
+
+        const movie = await response.json();
+      
+        //  Afficher les données
+        document.getElementById('title').textContent = movie.title;
+        document.getElementById('overview').textContent = movie.overview;
+        document.getElementById('date').textContent = movie.release_date;
+        document.getElementById('note').textContent = movie.vote_average + ' %';
+        if (movie.poster_path) {
+            
+            document.getElementById('poster').src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+        }
+        else{
+            document.getElementById('poster').src ='image/imageParDefaut.webp';
+
+        }
+
+    } catch (error) {
+        console.error(error.message);
+    }
 }
+getMovieDetail()
 
  // le travaillle de mourtalla code 
