@@ -97,24 +97,29 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
             
             result.results.forEach(element => {
                 let divFilm = document.getElementById('film')
-                let card = document.createElement('div')
+                let card = document.createElement('a')
                 let newTitle = document.createElement('h3')
                 let newDescription = document.createElement('p')
                 let newDate = document.createElement('p')
                 let newPopularity = document.createElement('p')
                 let newImg = document.createElement('img')
-
+                
+                
                 newTitle.textContent = element.original_title;
                 newDescription.textContent = element.overview;
                 newDate.textContent = element.release_date;
                 newPopularity.textContent = element.popularity + " %";
+                card.href = `detail.html?movieId=${element.id}`; // cet id doit provenir 
+
+
 
                 if (element.poster_path === null) {
                     newImg.src = "image/imageParDefaut.webp" ;
+
                 }else{
                     newImg.src = "https://image.tmdb.org/t/p/original/" + element.poster_path;
                 }
-
+              
 
 
                 
@@ -137,7 +142,7 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
 
                 document.body.appendChild(divFilm);
             });
-                        console.log(result);
+                console.log(result);
         } catch (error) {
             console.error(error.message);
         }
@@ -151,5 +156,8 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
     getData();
 // })
 
+async function getMovieDetail() {
+    
+}
 
  // le travaillle de mourtalla code 
