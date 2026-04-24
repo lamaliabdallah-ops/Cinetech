@@ -3,7 +3,7 @@
     // });
 
 
-
+console.log("toto")
  // le travaillle de mourtalla 
     
 const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzViOWNmYzBhZSIsIm5iZiI6MTc3NjY3MDQ0MS45MzkwMDAxLCJzdWIiOiI2OWU1ZDZlOWMwNTI4MDkwYjI4NGY1NDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.REkvyOFSWugb7-TqtNGorgtPUqWZFQh0SQ8_NWN05hM';
@@ -73,7 +73,7 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
 //         }
 //     }
 
-    async function getData() {
+    export async function getData() {
         const movie = "fight club"
         const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=3&query=${movie}`;
         
@@ -126,7 +126,7 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
                 card.className = "p-5 border rounded-xl shadow-md w-64 flex flex-col";
 
 
-
+                console.log(card,'card')
 
                 card.appendChild(newImg);
                 card.appendChild(newTitle);
@@ -135,7 +135,8 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
                 card.appendChild(newPopularity);
                 divFilm.appendChild(card);
 
-                document.body.appendChild(divFilm);
+                const rootContainer = document.getElementById('root')
+                rootContainer.appendChild(divFilm);
             });
                         console.log(result);
         } catch (error) {
@@ -143,12 +144,7 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
         }
     }
     // boutons pagination
-    let btn_prev = document.getElementById('btn_prev');
-    let btn_next = document.getElementById('btn_next');
-    if (btn_prev) btn_prev.addEventListener('click', prevPage);
-    if (btn_next) btn_next.addEventListener('click', nextPage);
 
-    getData();
 // })
 
 
