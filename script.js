@@ -74,8 +74,9 @@ const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmRjNjgwYTk1ODlkM2U4NzM5MzQ0NzV
 //     }
 
     async function getData() {
-        const movie = "fight club"
-        const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=3&query=${movie}`;
+        const movie = "fight%20club"
+        let page = 1
+        const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=${page}&query=${movie}`;
         
         const options = {
             method: 'GET',
@@ -174,6 +175,8 @@ async function getMovieDetail() {
         if (!response.ok) throw new Error(`Erreur: ${response.status}`);
 
         const movie = await response.json();
+        console.log(movie);
+        
       
         //  Afficher les données
         document.getElementById('title').textContent = movie.title;
@@ -181,12 +184,10 @@ async function getMovieDetail() {
         document.getElementById('date').textContent = movie.release_date;
         document.getElementById('note').textContent = movie.vote_average + ' %';
         if (movie.poster_path) {
-            
             document.getElementById('poster').src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
         }
         else{
             document.getElementById('poster').src ='image/imageParDefaut.webp';
-
         }
 
     } catch (error) {
