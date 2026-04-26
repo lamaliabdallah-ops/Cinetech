@@ -1,5 +1,5 @@
 <?php
-namespace CINETECH\Database;
+namespace Cinetech\Database;
 class Database {
     private static $instance;
     private \PDO $pdo;
