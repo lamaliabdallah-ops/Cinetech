@@ -72,11 +72,66 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         </div>
     </div>
 </main>
-
 <footer class="footer">
-    <div class="footer-bottom">
-        <p>© 2025 CINETECH. Tous droits réservés.</p>
+    <div class="footer-newsletter">
+        <div class="newsletter-text">
+            <h4>Restez informé</h4>
+            <p>Recevez les dernières sorties cinéma chaque semaine</p>
+        </div>
     </div>
+    <div class="footer-grid">
+        <div class="footer-col-brand">
+            <div class="footer-logo"> CINETECH</div>
+            <p class="footer-desc">
+                Votre bibliothèque personnelle de films et séries.
+                Découvrez, notez et partagez vos coups de cœur cinéma.
+            </p>
+            <div class="footer-socials">
+                <a class="social-btn" href="#" title="Twitter"></a>
+                <a class="social-btn" href="#" title="Instagram"></a>
+                <a class="social-btn" href="#" title="Discord"></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Mes Details</a></li>
+                <li><a href="#">Rechercher</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Genres</h4>
+            <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Comédie</a></li>
+                <li><a href="#">Drame</a></li>
+                <li><a href="#">Horreur</a></li>
+                <li><a href="#">Science-fiction</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Infos</h4>
+            <ul>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Confidentialité</a></li>
+                <li><a href="#">Mentions légales</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+        <span>© 2024 Cinetech — Tous droits réservés</span>
+        <div class="tmdb-badge">
+            <span>Données fournies par The Movie Database</span>
+        </div>
+        <span>Fait avec pour le cinéma</span>
+    </div>
+
 </footer>
 </body>
 </html>
